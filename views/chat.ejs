@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <title> chat </title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" /> 
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <script type="text/javascript" src="/socket/socket.io.js" ></script>
+    <script type="text/javascript" src="/javascript/script.js" ></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+   
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container navbar-header">
+        <a class="navbar-brand" id="text" style="color:black;" href="#"> <b>Mychat - </b> <span ><%= user.name %> <span> </a>
+        </div>
+        <div class="navbar-form navbar-left form-inline"  >
+        <a href="/logout" class="btn btn-default btn-sm ">Logout</a>
+      </div>
+    </nav>
+
+
+<div class="right">
+    <h4>userList: </h4>
+    <ul id="names"> </ul>
+</div>
+
+<div class="left" >
+    <ul id="messages"> </ul>
+<form>
+  <div class="form-group">
+    <input type="hidden" id="h" value=<%= user.name %> ></input>
+    <label>To</label>
+    <input type="text" style="width:200px;background-color:#F1F1F1;" class="form-control" id="target-user" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label>Text</label>
+    <textarea class="form-control" id="m" style="background-color:#F1F1F1;" rows="3" placeholder="Enter your text" autofocus></textarea>
+  </div>
+  <button type="submit"  class="btn btn-default btn-sm" autofocus>Send</button>
+</form>
+</body>
+
+ <script type="text/javascript" src="/javascript/script.js" ></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+</html> 

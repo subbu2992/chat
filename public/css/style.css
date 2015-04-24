@@ -1,0 +1,12 @@
+* { margin: 0; padding: 0}
+div.right{width:10% ; float: right; margin-top: -20px; display:block; }
+#names {list-style-type: none;}
+div.left{width: 90%; float: left; display: block;}
+body { font: 13px Helvetica, Arial; }
+form { padding: 3px; position: fixed; bottom: 0; width: 100%; }
+ #m{ border: 0; padding: 10px; width: 70%; margin-right: .5%; }
+form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+ #messages { list-style-type: none; margin-top: -12px; }
+ #messages li {padding: 5px 10px; }
+ 
+ /*#messages li:nth-child(odd) { background: #eee; }*/
