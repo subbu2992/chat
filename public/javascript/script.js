@@ -25,6 +25,12 @@ socket.on('userlist-name',function(name){
   $('#names').append($('<li id="' + name + '">').text(name));
 })
 
+socket.on('full-list',function(array){
+	for(i=0;i<array.length;i++){
+  $('#names').append($('<li id="' + array[i] + '">').text(array[i]));
+}
+})
+
 socket.on('userleft',function(name){
   $('#'+ name).remove();
 })

@@ -25,18 +25,24 @@ server.listen(app.get('port'),function() {
 
 var userlist = {}
 
+
 io.on('connection', function(socket){
     socket.on('name',function(name){
-       io.emit('userlist-name',name);
-        console.log("------------------------"+name);
         userlist[name] = socket
         socket.username = name
-        console.log(socket.username);
-
+       // io.emit('userlist-name',name);
+        var array = [];
+        for (var k in userlist){
+            array.push(k);
+        }
+        for(i=0;i<array.length-1;i++){
+            userlist[array[i]].emit('userlist-name',name);
+        }
+    // console.log(array);
+        userlist[name].emit('full-list',array);
     });
 
     socket.on('send-msg', function(name, msg){
-        console.log('got user name' + name + " " + msg);
         targetUser = userlist[name];
         targetUser.emit('rec-msg', msg);
     });
@@ -44,7 +50,6 @@ io.on('connection', function(socket){
     socket.on('disconnect', function(){
     io.emit('userleft', socket.username);
     console.log('user disconnected');
-    console.log(socket.username);
     });
 
 
